@@ -4,10 +4,11 @@
 #include <string>
 
 using std::string;
+using std::to_string;
 
 class MotorModule : public RobotModule{
     public:
-        MotorModule();
+        MotorModule(string, string, double);
         double operator()();
         double current();
         void tick();
