@@ -24,6 +24,10 @@ public:
     const ModuleBoard* operator[](size_t i) const;
     ModuleBoard* operator[](size_t i);
 
+    double operator()() const;
+
+    void tickAll();
+
 
 
 private:
