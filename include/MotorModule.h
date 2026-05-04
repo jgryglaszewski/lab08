@@ -14,6 +14,7 @@ class MotorModule : public RobotModule{
         void tick();
         void reset();
         string diagnostic();
+        string type();
     private:
         double load;
         double heat;

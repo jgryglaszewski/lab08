@@ -2,29 +2,29 @@
 
 MotorModule::MotorModule(string id, string name, double l) : RobotModule(id, name), heat(0), load(l) {}
 
-double operator()(){
+double MotorModule::operator()(){
     return this->current();
 }
 
-double current(){
+double MotorModule::current(){
     if(isActive)
         return load*120 + heat*10;
     else
         return 0;
 }
 
-void tick(){
+void MotorModule::tick(){
     if(isActive){
         heat += 2;
     }
 }
 
-void reset(){
-    stop();
+void MotorModule::reset(){
+    isActive = false;
     heat = 0;
 }
 
-string diagnostic() {
+string MotorModule::diagnostic() {
     string out("");
     if(isActive){
         out.append("ACTIVE ");
@@ -37,4 +37,8 @@ string diagnostic() {
     out.append(" heat=");
     out.append(to_string(heat));
     return out;
+}
+
+string MotorModule::type(){
+    return "MotorModule";
 }
