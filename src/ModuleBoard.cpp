@@ -9,7 +9,20 @@ ModuleBoard::~ModuleBoard(){
 }
 
 void ModuleBoard::add(RobotModule* r){
-    modules.emplace_back(r);
+    RobotModule *p;
+    switch(r->type()){
+        case "SensorModule":
+            p = new SensorModule(r->getID(), r->getName(), r->getSpecial());
+            break;
+        case "MotorModule":
+            p = new MotorModule(r->getID(), r->getName(), r->getSpecial());
+            break;
+        case "RadioModule":
+            p = new RadioModule(r->getID(), r->getName(), r->getSpecial());
+            break;
+    }
+    delete r;
+    modules.emplace_back(p);
 }
 
 std::size_t ModuleBoard::size(){ return modules.size(); }
