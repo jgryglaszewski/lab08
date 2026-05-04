@@ -1,0 +1,3 @@
+/home/stud2024/4gryglaszewski/sem4/cpp2/lab08/build/CMakeFiles/Pokemony_Pamietaja_O_Zarzadzaniu_Pamiecia.dir
+/home/stud2024/4gryglaszewski/sem4/cpp2/lab08/build/CMakeFiles/edit_cache.dir
+/home/stud2024/4gryglaszewski/sem4/cpp2/lab08/build/CMakeFiles/rebuild_cache.dir

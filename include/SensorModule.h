@@ -1,9 +1,10 @@
 #ifndef SENSOR_MODULE_H
 #define SENSOR_MODULE_H
 
+#include "RobotModule.h"
 #include <string>
 
-class SensorModule {
+class SensorModule : public RobotModule {
 public:
     SensorModule(std::string id, std::string name, int sensitivity);
 

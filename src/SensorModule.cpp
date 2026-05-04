@@ -1,6 +1,6 @@
 #include "SensorModule.h"
 
-SensorModule::SensorModule(std::string id, std::string name, int sensitivity) : RobotModule(id, name), sensitivity(sensitivity);
+SensorModule::SensorModule(std::string id, std::string name, int sensitivity) : RobotModule(id, name), sensitivity(sensitivity), samples(0){}
 
 double SensorModule::current() const {
     if (isActive) {
@@ -20,7 +20,8 @@ void SensorModule::tick() {
 }
 
 std::string SensorModule::diagnostic() const {
-    return (isActive ? "ACTIVE" : "SLEEP") + "sensitivity=" + std::to_string(sensitivity) + " samples=" + std::to_string(samples);
+    std::string temp = isActive ? "ACTIVE " : "SLEEP ";
+    return temp + "sensitivity=" + std::to_string(sensitivity) + " samples=" + std::to_string(samples);
 }
 
 void SensorModule::reset() {

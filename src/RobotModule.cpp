@@ -1,6 +1,6 @@
-#include "RobotModule"
+#include "RobotModule.h"
 
-RobotModule::RobotModule(std::string id, std::string name) : id(id), name(name) {}
+RobotModule::RobotModule(std::string id, std::string name) : id(id), name(name), isActive(false) {}
 
 std::string RobotModule::getName() const {
     return name;
@@ -15,9 +15,9 @@ void RobotModule::stop() {
 }
 
 std::string RobotModule::summary() const {
-    return type() + name + "[id=" + id + ", current=" + current() + " mA]" + " -> " + diagnostic();
+    return type() + name + "[id=" + id + ", current=" + std::to_string(current()) + " mA]" + " -> " + diagnostic();
 }
 
-int RobotModule::operator() const {
+int RobotModule::operator()() const {
     return current();
 }

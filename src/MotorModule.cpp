@@ -2,11 +2,11 @@
 
 MotorModule::MotorModule(string id, string name, double l) : RobotModule(id, name), heat(0), load(l) {}
 
-double MotorModule::operator()(){
+double MotorModule::operator()() const{
     return this->current();
 }
 
-double MotorModule::current(){
+double MotorModule::current() const{
     if(isActive)
         return load*120 + heat*10;
     else
@@ -24,7 +24,7 @@ void MotorModule::reset(){
     heat = 0;
 }
 
-string MotorModule::diagnostic() {
+string MotorModule::diagnostic() const{
     string out("");
     if(isActive){
         out.append("ACTIVE ");
@@ -39,6 +39,6 @@ string MotorModule::diagnostic() {
     return out;
 }
 
-string MotorModule::type(){
+string MotorModule::type() const{
     return "MotorModule";
 }

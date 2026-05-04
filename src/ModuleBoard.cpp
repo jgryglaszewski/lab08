@@ -14,10 +14,10 @@ void ModuleBoard::add(RobotModule* r){
 
 std::size_t ModuleBoard::size(){ return modules.size(); }
 
-const ModuleBoard* ModuleBoard::operator[](size_t i) const{
+const RobotModule* ModuleBoard::operator[](size_t i) const{
     return i<modules.size() ? modules[i] : nullptr;
 }
-ModuleBoard* ModuleBoard::operator[](size_t i){
+RobotModule* ModuleBoard::operator[](size_t i){
     return i<modules.size() ? modules[i] : nullptr;
 }
 

@@ -21,8 +21,8 @@ public:
 
     std::size_t size();
 
-    const ModuleBoard* operator[](size_t i) const;
-    ModuleBoard* operator[](size_t i);
+    const RobotModule* operator[](size_t i) const;
+    RobotModule* operator[](size_t i);
 
     double operator()() const;
 

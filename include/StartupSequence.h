@@ -10,6 +10,9 @@
 
 #include <vector>
 #include "RobotModule.h"
+#include "RadioModule.h"
+#include "MotorModule.h"
+#include "SensorModule.h"
 
 class StartupSequence{
 public:
